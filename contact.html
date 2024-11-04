@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.contact-form {
+  width: 50%;
+  display: inline-block;
+  align-items: center;
+  background-color: #fff;
+  padding: 30px;
+  margin:0 23%  ;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* color: black; */  
+} 
+.contact-form h2 {
+  text-align: center;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 10px;
+  border: none;
+  background-color: #e9d32d;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #e9d32d;
+}
+
+.share-container{
+  padding: 10px 20px;
+  text-align: left;
+  animation: slideIn 1s ease-in-out;
+
+}
+
+.share-container h1{
+  font-size: 40px;
+  text-align: center;
+  /* text-decoration: underline; */
+  padding:15px;
+  font-family: 'Courier New', Courier, monospace;
+  color: azure;
+  /* transition: color 10s ease; */
+}
+.share-container h2{
+  color:azure;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration:underline;
+  /* text-align:end; */
+}
+.stay{
+   text-align: center;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+    </style>
+  
+</head>
+<body>
+    <body>
+        <header>
+          <div id="navbar"></div>
+           <!-- This is where the navbar will be inserted -->
+      
+          <div class="navbar">
+            <div class="logo">
+              <!-- <img src="your-logo.png" alt="Your Logo"> -->
+              <span>NiSa Tailoring</span>
+            </div>
+            <div class="nav-links">
+              <a href="index.html" >Home</a>
+              <a href="services.html" >Services</a>
+              <a href="about.html" >About</a>
+              <a href="contact.html" class="active">Contact Us</a>
+              <a href="LOGIN/login.html" class="login">Login</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="share-container">
+          <section id="share">
+            <h1>WE'D LOVE TO HEAR FROM YOU</h1>
+              <div class="stay">
+                <h2>Stay Connected</h2>
+                  <p>Thank you for visiting our website, if you’d like to contact us with any questions whatsoever, please fill out the contact form.We’re happy to answer any questions about prices, process, availability etc. Please do reach out and contact us, even if it’s just for a chat so you can get a better idea of what we do or feel free to run your ideas for the perfect tailored dress by us, we are happy to point you in the right direction.
+
+                  </p>
+                </div>
+          </section>
+        </div>
+      <div class="contactf">
+        <section class="contact-form">
+          <h2>Share your Experience</h2>
+          <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Submit</button>
+          </form>
+          <p id="formMessage"></p>
+        </section>
+      </div>
+        <script>
+          document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('formMessage').innerText = 'Thank you for your message!';
+            this.reset();
+          });
+        </script>
+
+        <footer>
+          <p>&copy; 2024 NiSa Tailor. All Rights Reserved.</p>  
+        </footer>
+</body>
+</html>

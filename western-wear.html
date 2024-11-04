@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailoring Website</title>
+<style>
+  /* Style the navbar */
+  .navbar {
+    /* font-size: 30px; */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between; /* Align items to the right */
+    align-items: center;
+    padding: 20px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+ 
+  /* Style the dropdown button */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Style the links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  
+  /* Style the card container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  /* Style the individual card */
+  .card {
+    width: 270px;
+    height: 420px;
+    margin-top: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  .card img{
+    width:85%;
+    height:70%;
+  }
+  /* .card .product-name{
+    padding:3px;
+  } */
+  .card h2{
+    padding:0px;
+  }
+  .card .price{
+    padding:0px;
+  }
+  .card .addcart{
+    padding:5px;
+    width:80%;
+    background-color:rgb(207, 204, 209);
+    border-radius:50px;
+    border-color: rgb(0, 0, 0) ;
+    font-size: 100%;
+  }
+
+
+  /* Style the cart */
+  .cart {
+    display: none; /* Initially hide the cart */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px; /* Increase the width */
+    height: 500px; /* Increase the height */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Add vertical scrolling if needed */
+  }
+
+  .cart-items {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    /* margin: 5px 0; */
+    padding:5px;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  .cart-item button {
+    margin-left: 10px;
+  }
+
+  /* .in-cart {
+    border: 2px solid green;
+  } */
+
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  footer {
+  /* position: absolute;  */
+  position: relative;
+  margin-bottom: auto;
+  /* background-color: #333; */
+  /* color: #fff; */
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+ }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Tailoring</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="filterSelection('all')">All</a>
+      <a href="#" onclick="filterSelection('PartyGowns')">Party Gowns</a>
+      <a href="#" onclick="filterSelection('tops')">Tops</a>
+      <!-- <a href="#" onclick="filterSelection('shirts')">Shirts</a> -->
+      <a href="#" onclick="filterSelection('skirts')">Skirts</a>
+      <a href="#" onclick="filterSelection('casual')">Casuals</a>
+      <a href="#" onclick="filterSelection('Formals')">Formals</a>
+  </div>
+  </div>
+  <!-- <a href="fabric.html">Fabric</a> -->
+  <!-- <a href="#">My Wishlist</a> -->
+  <a href="#" onclick="toggleCart()"> <i class="fas fa-shopping-cart"></i></a>
+</div>
+<div class="card-container">
+    <div class="card skirts">
+      <img src="https://i.pinimg.com/564x/25/ae/bf/25aebf85ba0b3eb94332731c625a59d9.jpg"  alt="skirt">
+      <!-- <div class="product-name">Product Name</div> -->
+      <h2>Skirt</h2>
+      <div class="price">Rs 600/-</div>
+      <button class="addcart" onclick="addToCart(this, 'skirts')">Add to Cart</button>
+    </div>
+    <div class="card PartyGowns">
+      <img src="https://i.pinimg.com/564x/17/65/97/17659717cb276620bdd7e2bf32de4af0.jpg" alt="partygown">
+      <h2>Party Gowns</h2>
+      <div class="price">Rs 3000/-</div>
+      <button class="addcart" onclick="addToCart(this, 'Partygowns')">Add to Cart</button>
+    </div>
+    <div class="card skirts">
+      <img src="https://i.pinimg.com/474x/0b/79/80/0b79803c7ca90e4bb4ce2d88f3562b52.jpg" alt="skirt">
+      <h2>Skirt</h2>
+      <div class="price">Rs 550/-</div>
+      <button class="addcart" onclick="addToCart(this, 'skirts')">Add to cart</button>
+    </div>
+    <div class="card casual">
+      <img src="https://i.pinimg.com/564x/85/bd/52/85bd52541e20df9a2fde181c1f0ffcca.jpg" alt="Casuals">
+      <h2>Casuals</h2>
+      <div class="price">Rs 800/-</div>
+      <button class="addcart" onclick="addToCart(this, 'casual')">Add to Cart</button>
+    </div>
+    <div class="card tops">
+      <img src="https://i.pinimg.com/736x/e6/b5/e8/e6b5e8f0ec4977f9922e9c3c83a3c901.jpg" alt="Blouses">
+      <h2>Top</h2>
+      <div class="price">Rs 450/-</div>
+      <button class="addcart" onclick="addToCart(this, 'tops')">Add to Cart</button>
+    </div>
+    <div class="card PartyGowns">
+      <img src="https://i.pinimg.com/236x/3f/eb/54/3feb54255f2464b7084d152078149e8d.jpg" alt="Party Gowns">
+      <h2>Party Gowns</h2>
+      <div class="price">Rs 1100/-</div>
+      <button class="addcart" onclick="addToCart(this, 'Partygowns')">Add to Cart</button>
+    </div>
+    
+    <div class="card tops">
+      <img src="https://i.pinimg.com/236x/3d/46/12/3d4612ece3370f3c1235782d04fb53d1.jpg" alt="tops">
+      <h2>Tops</h2>
+      <div class="price">Rs 300/-</div>
+      <button class="addcart" onclick="addToCart(this, 'tops')">Add to Cart</button>
+    </div>
+    <div class="card Formals">
+      <img src="https://i.pinimg.com/564x/cf/59/f8/cf59f8a87d04450400707422811c1bb8.jpg" alt="Formals">
+      <h2>Formals</h2>
+      <div class="price">Rs 1250/-</div>
+      <button class="addcart" onclick="addToCart(this, 'Formals')">Add to Cart</button>
+    </div> 
+  </div>
+
+<div class="cart" id="cart">
+  <div class="cart-header">
+    <h3>Cart</h3>
+    <button class="close-btn" onclick="toggleCart()" >&times;</button>
+  </div>
+  <ul class="cart-items" id="cartItems"></ul>
+</div>
+
+<script>
+  function filterSelection(category) {
+    var cards = document.getElementsByClassName("card");
+    for (var i = 0; i < cards.length; i++) {
+      if (category === 'all' || cards[i].classList.contains(category)) {
+        cards[i].style.display = "block";
+      } else {
+        cards[i].style.display = "none";
+      }
+    }
+  }
+
+  function addToCart(button, item) {
+    var cartItems = document.getElementById("cartItems");
+    var li = document.createElement("li");
+    li.className = "cart-item";
+    li.appendChild(document.createTextNode(item));
+
+    var removeButton = document.createElement("button");
+    removeButton.appendChild(document.createTextNode("Remove"));
+    removeButton.onclick = function() {
+      removeFromCart(button, li);
+    };
+    li.appendChild(removeButton);
+
+    cartItems.appendChild(li);
+
+    // Mark the item as in the cart
+    var card = button.parentElement;
+    card.classList.add("in-cart");
+    button.textContent = "Added to cart";
+    button.onclick = function() {
+      removeFromCart(button, li);
+    };
+  }
+
+  function removeFromCart(button, cartItem) {
+    var cartItems = document.getElementById("cartItems");
+    cartItems.removeChild(cartItem);
+
+    // Unmark the item as in the cart
+    var card = button.parentElement;
+    card.classList.remove("in-cart");
+    button.textContent = "Add to cart";
+    button.onclick = function() {
+      addToCart(button, card.querySelector("h2").textContent);
+    };
+  }
+
+  function toggleCart() {
+    var cart = document.getElementById("cart");
+    if (cart.style.display === "none" || cart.style.display === "") {
+      cart.style.display = "block";
+    } else {
+      cart.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+<footer>
+  <p>&copy; 2024 NiSa Tailor. All Rights Reserved.</p>
+</footer>
+</html>
