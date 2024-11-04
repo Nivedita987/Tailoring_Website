@@ -31,20 +31,22 @@ Welcome to the NiSa Tailoring website repository! This website is a modern, styl
 
 Install Dependencies
 
-bash
+```bash
 npm install
 Configure MongoDB
 
+```
 Ensure MongoDB is installed and running.
 Update the MongoDB connection string in the configuration file (config.js or .env).
 Run the Application
 
-bash
+```bash
 npm start
 The server will start on http://localhost:3018.
 
+```
 Folder Structure
-perl
+
 Tailoring_Website/
 ├── .vscode/                # VS Code settings
 ├── LOGIN/                  # Login-related files
@@ -59,4 +61,5 @@ Tailoring_Website/
 ├── package-lock.json       # NPM lock file for dependencies
 ├── style.css               # Main CSS styles
 └── script.js               # JavaScript for interactivity
+
 
