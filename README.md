@@ -2,7 +2,7 @@
  
 # NiSa Tailoring Website
 
-![Website Screenshot](screencapture-localhost-3018-index-html-2024-11-04-12_07_07.png)
+![Website Screenshot](Homepage.png)
 
 ## Project Overview
 
@@ -28,3 +28,37 @@ Welcome to the NiSa Tailoring website repository! This website is a modern, styl
    ```bash
    git clone https://github.com/your-username/nisa-tailoring.git
    cd nisa-tailoring
+
+Install Dependencies
+
+bash
+Copy code
+npm install
+Configure MongoDB
+
+Ensure MongoDB is installed and running.
+Update the MongoDB connection string in the configuration file (config.js or .env).
+Run the Application
+
+bash
+Copy code
+npm start
+The server will start on http://localhost:3018.
+
+Folder Structure
+perl
+Copy code
+Tailoring_Website/
+├── .vscode/                # VS Code settings
+├── LOGIN/                  # Login-related files
+├── index.html              # Homepage file
+├── indian-wear.html        # Indian Wear section file
+├── western-wear.html       # Western Wear section file
+├── Restyling.html          # Restyling section file
+├── about.html              # About page file
+├── contact.html            # Contact page file
+├── services.html           # Services page file
+├── package.json            # NPM package configuration
+├── package-lock.json       # NPM lock file for dependencies
+├── style.css               # Main CSS styles
+└── script.js               # JavaScript for interactivity
