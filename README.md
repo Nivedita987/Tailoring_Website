@@ -32,7 +32,6 @@ Welcome to the NiSa Tailoring website repository! This website is a modern, styl
 Install Dependencies
 
 bash
-Copy code
 npm install
 Configure MongoDB
 
@@ -41,13 +40,11 @@ Update the MongoDB connection string in the configuration file (config.js or .en
 Run the Application
 
 bash
-Copy code
 npm start
 The server will start on http://localhost:3018.
 
 Folder Structure
 perl
-Copy code
 Tailoring_Website/
 ├── .vscode/                # VS Code settings
 ├── LOGIN/                  # Login-related files
@@ -62,3 +59,4 @@ Tailoring_Website/
 ├── package-lock.json       # NPM lock file for dependencies
 ├── style.css               # Main CSS styles
 └── script.js               # JavaScript for interactivity
+
