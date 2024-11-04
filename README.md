@@ -23,20 +23,18 @@ Welcome to the NiSa Tailoring website repository! This website is a modern, styl
 - **MongoDB** - Database for storing user and service information
 
 ## Installation
-
-1. **Clone the Repository**
+**1. Clone the Repository**
    ```bash
    git clone https://github.com/your-username/nisa-tailoring.git
    cd nisa-tailoring
-
-Install Dependencies
-
+```
+**2. Install Dependencies**
 ```bash
 npm install
 Configure MongoDB
 
 ```
-Ensure MongoDB is installed and running.
+**3. Ensure MongoDB is installed and running.**
 Update the MongoDB connection string in the configuration file (config.js or .env).
 Run the Application
 
@@ -46,6 +44,8 @@ The server will start on http://localhost:3018.
 
 ```
 Folder Structure
+
+```perl
 
 Tailoring_Website/
 ├── .vscode/                # VS Code settings
@@ -62,4 +62,4 @@ Tailoring_Website/
 ├── style.css               # Main CSS styles
 └── script.js               # JavaScript for interactivity
 
-
+```
